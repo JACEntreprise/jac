@@ -1,0 +1,19 @@
+@import tools.Session
+@(title :String)(session :Session)(style: Html)(contenu: Html)(script: Html)
+@layout(title){
+    @style
+} {
+    @entete(session)
+}{
+    <div class="contenu-page-personnelle">
+        <div class="contenu-personnelle">
+            <div id="contenu-notification"></div>
+            @contenu
+        </div>
+    </div>
+}{
+    @script
+    <script type="text/javascript" src="@routes.MembreController.jsRoutes"></script>
+    <script src='@routes.Assets.versioned("javascripts/membre/membre.js")'></script>
+
+}

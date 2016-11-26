@@ -1,0 +1,61 @@
+@import tools.Session
+@import models.Pays
+@import models.Profil
+@import models.Domaine
+@(session :Session)
+@layout_connect("Information profil")(session){
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/inscription.css")'>
+}{
+    <div class="content-completer content-info-profil">
+        <h3>Donner de la valeur à votre profil <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+        <div class="content-info-profil">
+            <div class="content-info-profil-item col-sm-6">
+                <div class="input-completer">
+                    <label for="pays">Pays</label>
+                    <select class="input-tout" name="pays" id="pays">
+                        @for(pays <- Pays.listePays()){
+                            <option value="@pays.getPays()">@pays.getPays()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="content-info-profil-item col-sm-6">
+                <div class="input-completer">
+                    <label for="secteur">Secteur</label>
+                    <select class="input-tout" name="secteur" id="secteur">
+                        @for(domaine <- Domaine.listeDomaines()){
+                            <option value="@domaine.getSecteur()">@domaine.getSecteur()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="content-info-profil-item col-sm-6">
+                <div class="input-completer">
+                    <label for="profil">Situation</label>
+                    <select class="input-tout" name="profil" id="profil">
+                        @for(profil <- Profil.listeProfils()){
+                            <option value="@profil.getProfil()">@profil.getProfil()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="content-info-profil-item col-sm-6">
+                <div class="input-completer">
+                    @if(session.getType()=="particulier"){}else{}
+                    <label for="titre">
+                        @if(session.getType()=="particulier"){
+                            Titre
+                        }else{
+                            Slogan
+                        }
+                    </label>
+                    <input type="text" placeholder="Titre actuel" name="titre" id="titre" class="input">
+                </div>
+            </div>
+        </div>
+
+        <input type="submit" value="Continuer" class="submit" id="continuer-info"/>
+    </div>
+
+}{
+}

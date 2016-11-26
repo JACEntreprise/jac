@@ -1,0 +1,43 @@
+@import tools.Session
+@(session :Session)
+@layout_connect("Etape inscription")(session){
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/inscription.css")'>
+}{
+    <div class="content-completer">
+        <h3>Completer votre profil pour avoir plus de visibilité. <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+        <form id="complet-info">
+            <div class="input-completer">
+                <textarea placeholder="votre adresse" name="adresse" id="adresse" class="input"></textarea>
+            </div>
+            <div class="input-completer">
+                <input type="text" placeholder="Site web" name="siteweb" id="siteweb" class="input">
+            </div>
+            <div class="input-completer">
+                <input type="text" placeholder="numero telephone" name="telephone" id="telephone" class="input">
+            </div>
+
+            @if(session.getType()=="particulier"){
+                <div class="input-completer">
+                    <div class="part">
+                        <select class="input-tout" name="anneeDeNaissance" id="anneeDeNaissance">
+                            <option value="0">Naissance</option>
+                            @for(i<-1960 to 2016){
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="part">
+                        <input type="text" placeholder="Lieu de naissance" name="lieuDeNaissance" id="lieuDeNaissance" class="input">
+                    </div>
+                </div>
+            }
+            @if(session.getType()=="particulier"){
+                <input type="submit" value="Continuer" class="submit submit-complet-info-particulier"/>
+            }else{
+                <input type="submit" value="Continuer" class="submit submit-complet-info-entreprise"/>
+            }
+        </form>
+    </div>
+
+}{
+}

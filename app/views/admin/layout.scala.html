@@ -1,0 +1,46 @@
+@(title: String)(menu:String)(titre:String)(css: Html)(content: Html)(js: Html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/bootstrap.min.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/bootstrap-responsive.min.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/moi/main.css")' />
+    @css
+    <link href='@routes.Assets.versioned("admin/font-awesome/css/font-awesome.css")' rel="stylesheet" />
+    <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/font-awesome-4.7.0/css/font-awesome.css")'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+@admin.head()
+@admin.sidebar()
+
+<!--main-container-part-->
+<div id="content">
+    <!--breadcrumbs-->
+    <div id="content-header">
+        <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Accueil @menu</a></div>
+        <h1>@titre <small><i class="fa fa-spinner fa-spin imload"></i></small></h1>
+
+    </div>
+    <!--End-breadcrumbs-->
+    <!--Action boxes-->
+    <div class="container-fluid">
+        @content
+    </div>
+</div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+    <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
+</div>
+<!--end-Footer-part-->
+@js
+
+</body>
+</html>

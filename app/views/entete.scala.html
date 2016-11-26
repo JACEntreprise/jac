@@ -1,0 +1,61 @@
+@import tools.Session
+@import models.Membre
+@(session :Session)
+<div class="entete-page-personnelle navbar navbar-inverse navbar-fixed-top">
+    <div class="entete-page-personnelle-haut">
+        <div class="logo col-sm-4">
+            <div class="logo-image"><span class="glyphicon glyphicon-user profil"></span> </div>
+        </div>
+        <div class="form-recherche col-sm-4">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Taper votre recherche" id="recherche">
+                    <button type="submit" class="submit-bouton btn"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+                <div id="description"></div>
+            </form>
+        </div>
+        <div class="groupe-icon groupe-icon-recharge col-sm-4">
+        </div>
+    </div>
+    <div class="entete-page-personnelle-menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <ul class="nav navbar-nav nav-gauche">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Message</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">Devenez premium</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="profil-bar initial-nom glyphicon">
+                                @session.getInitialNom()
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu menu-gerer">
+                        <li><a href="#">Ajouter mon CV</a></li>
+                        <li><a href="#"><span class="left"><span class="glyphicon glyphicon-education icon-gerer icon-experience"></span>Experience</span><span class="right">Gerer</span></a></li>
+                        <li><a href="#"><span class="left"><span class="glyphicon glyphicon-education icon-gerer icon-competence"></span>Competence</span><span class="right">Gerer</span></a></li>
+                        <li><a href="#"><span class="left"><span class="glyphicon glyphicon-education icon-gerer icon-langue"></span>Langue</span><span class="right">Gerer</span></a></li>
+                        <li><a href="#"><span class="left"><span class="glyphicon glyphicon-education icon-gerer icon-loisir"></span>Loisir</span><span class="right">Gerer</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-font profil-bar"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Mon compte</a></li>
+                        <li><a href="#">Photo de couverture</a></li>
+                        <li><a href="#">Completer votre profil</a></li>
+                        <li><a href="#">Deconnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

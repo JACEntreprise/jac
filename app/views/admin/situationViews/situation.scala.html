@@ -1,0 +1,88 @@
+@admin.layout("Admin")("> situation")("Situation"){
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/uniform.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/select2.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/matrix-style.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/matrix-media.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/bootstrap-wysihtml5.css")' />
+
+}{
+    <hr>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+                    <h5>Liste des situations </h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered data-table">
+                        <thead>
+                            <tr>
+                                <th>Situation</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodySituation">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                    <h5>Formulaire</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal formulaire-situation">
+                        <span class="error error-situation"></span>
+                        <div class="control-group">
+                            <label class="control-label">Libelle </label>
+                            <div class="controls">
+                                <input type="text" class="span10" placeholder="situation" id="profil" name="profil" />
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success ajouter">Ajouter</button>
+                            <button type="submit" class="btn btn-info modifier">Modifier</button>
+                            <button type="submit" class="btn btn-danger annuler">Anuler</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="supprimer-un-situation" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Suppression d'une situation</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="confirmer">Voulez-vous réellement supprimer cette situation?</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary supprimer-le-situation">Oui</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}{
+    <script src='@routes.Assets.versioned("admin/js/jquery.min.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/jquery.ui.custom.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/bootstrap.min.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/jquery.uniform.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/select2.min.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/jquery.dataTables.min.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/matrix.tables.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/matrix.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/masked.js")'></script>
+    <script src='@routes.Assets.versioned("admin/js/jquery.peity.min.js")'></script>
+    <script type="text/javascript" src="@routes.AdminController.jsRoutes"></script>
+    <script src='@routes.Assets.versioned("admin/js/moi/situation.js")'></script>
+}

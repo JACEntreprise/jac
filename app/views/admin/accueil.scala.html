@@ -1,0 +1,145 @@
+@admin.layout("Admin")("")(""){
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/fullcalendar.css")'/>
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/matrix-style.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/matrix-media.css")' />
+    <link rel="stylesheet" href='@routes.Assets.versioned("admin/css/jquery.gritter.css")' />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href='@routes.Assets.versioned("admin/css/bootstrap.min.css")' />
+<link rel="stylesheet" href='@routes.Assets.versioned("admin/css/bootstrap-responsive.min.css")' />
+<link rel="stylesheet" href='@routes.Assets.versioned("admin/css/uniform.css")' />
+<link rel="stylesheet" href='@routes.Assets.versioned("admin/css/select2.css")' />
+<link rel="stylesheet" href='@routes.Assets.versioned("admin/css/matrix-style.css")' />
+<link rel="stylesheet" href='@routes.Assets.versioned("admin/css/matrix-media.css")' />
+<link href='@routes.Assets.versioned("admin/font-awesome/css/font-awesome.css")' rel="stylesheet" />
+
+<script src='@routes.Assets.versioned("admin/js/jquery.min.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/jquery.ui.custom.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/bootstrap.min.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/jquery.uniform.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/select2.min.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/jquery.dataTables.min.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/matrix.tables.js")'></script>
+<script src='@routes.Assets.versioned("admin/js/matrix.js")'></script>
+
+}{
+    <div class="quick-actions_homepage">
+        <ul class="quick-actions">
+            <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> Tableau de bord </a> </li>
+            <li class="bg_lg span3"> <a href="charts.html"> <i class="icon-user"></i> Membre</a> </li>
+            <li class="bg_ly"> <a href="widgets.html"> <i class="icon-envelope"></i><span class="label label-success">101</span> Message </a> </li>
+            <li class="bg_lo"> <a href="tables.html"> <i class="icon-globe"></i> Pays</a> </li>
+            <li class="bg_ls"> <a href="grid.html"> <i class="icon-comment"></i> Commentaires</a> </li>
+            <li class="bg_lo span3"> <a href="form-common.html"> <i class="icon-pencil"></i> Secteur</a> </li>
+            <li class="bg_ls"> <a href="buttons.html"> <i class="icon-user"></i> Relation</a> </li>
+            <li class="bg_lb"> <a href="interface.html"> <i class="icon-user"></i>Article</a> </li>
+            <li class="bg_lg"> <a href="calendar.html"> <i class="icon-pencil"></i>Publicite</a> </li>
+            <li class="bg_lr"> <a href="@routes.AdminController.role()"> <i class="icon-user"></i> Role</a> </li>
+
+        </ul>
+    </div>
+    <!--End-Action boxes-->
+
+    <!--Chart-box-->
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
+                <h5>Evolution du site</h5>
+            </div>
+            <div class="widget-content" >
+                <div class="row-fluid">
+                    <div class="span9">
+                        <div class="chart"></div>
+                    </div>
+                    <div class="span3">
+                        <ul class="site-stats">
+                            <li class="bg_lh"><i class="icon-user"></i> <strong>2540</strong> <small>Inscrits</small></li>
+                            <li class="bg_lh"><i class="icon-plus"></i> <strong>120</strong> <small>Nouveaux inscrits </small></li>
+                            <li class="bg_lh"><i class="icon-user"></i> <strong>656</strong> <small>Particulier</small></li>
+                            <li class="bg_lh"><i class="icon-user"></i> <strong>9540</strong> <small>Entreprise</small></li>
+                            <li class="bg_lh"><i class="icon-repeat"></i> <strong>10</strong> <small>Connectés</small></li>
+                            <li class="bg_lh"><i class="icon-globe"></i> <strong>8540</strong> <small>Membre actif</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End-Chart-box-->
+    <hr/>
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="widget-box">
+                <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-chevron-down"></i></span>
+                    <h5>Commentaires</h5>
+                </div>
+                <div class="widget-content nopadding collapse in" id="collapseG2">
+                    <ul class="recent-posts">
+                        <li>
+                            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
+                            <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                                <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
+                            <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                                <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av4.jpg"> </div>
+                            <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                                <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                            </div>
+                        <li>
+                            <button class="btn btn-warning btn-mini">View All</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="span6">
+            <div class="widget-box widget-chat">
+                <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+                    <h5>Messages</h5>
+                </div>
+                <div class="widget-content nopadding collapse in" id="collapseG4">
+                    <div class="chat-users panel-right2">
+                        <div class="panel-title">
+                            <h5>Utilisateurs</h5>
+                        </div>
+                        <div class="panel-content nopadding">
+                            <ul class="contact-list">
+                                <li id="user-Alex" class="online"><a href=""><img alt="" src="img/demo/av1.jpg" /> <span>Alex</span></a></li>
+                                <li id="user-Linda"><a href=""><img alt="" src="img/demo/av2.jpg" /> <span>Linda</span></a></li>
+                                <li id="user-John" class="online new"><a href=""><img alt="" src="img/demo/av3.jpg" /> <span>John</span></a><span class="msg-count badge badge-info">3</span></li>
+                                <li id="user-Mark" class="online"><a href=""><img alt="" src="img/demo/av4.jpg" /> <span>Mark</span></a></li>
+                                <li id="user-Maxi" class="online"><a href=""><img alt="" src="img/demo/av5.jpg" /> <span>Maxi</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chat-content panel-left2">
+                        <div class="chat-messages" id="chat-messages">
+                            <div id="chat-messages-inner"></div>
+                        </div>
+                        <div class="chat-message well">
+                            <button class="btn btn-success">Send</button>
+                <span class="input-box">
+                <input type="text" name="msg-box" id="msg-box" />
+                </span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}{
+    @admin.script_footer()
+    <script>
+        $(document).ready(function(){
+            $(".imload").fadeOut(1000);
+        });
+    </script>
+}

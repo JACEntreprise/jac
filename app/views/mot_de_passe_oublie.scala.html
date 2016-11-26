@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mot de passe oublié</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
+    <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/font-awesome-4.7.0/css/font-awesome.css")'>
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/etape.css")'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div id="content-principal">
+    <div class="content-completer">
+        <h3>Mot de passe oublié <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+        <h6>Entrer votre email un mot de passe vous sera envoyé</h6>
+        <form id="complet-info">
+            <div class="input-completer">
+                <input type="email" placeholder="votre email" name="email" id="email" class="input">
+            </div>
+            <input type="submit" value="Envoyer" class="submit"/>
+        </form>
+    </div>
+</div>
+<script src='@routes.Assets.versioned("javascripts/etape.js")'></script>
+</body>
+</html>

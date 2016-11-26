@@ -1,0 +1,73 @@
+@import "layout/variable";
+html{
+    min-height:100%;
+}
+body {
+    position: relative;
+    color: #000;
+    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
+    background: #e0e2e4 url("images/banner.svg") bottom center no-repeat !important;
+    padding: 5em 0 5em 0;
+    margin: 0;
+    background-size: 125% auto;
+    min-height:100%;
+    .content-completer {
+        background: #ffffff none repeat scroll 0 0;
+        margin: auto;
+        padding: 20px 20px 50px 20px;
+        position: relative;
+        text-align: center;
+        top: 25px;
+        width: 400px;
+        .error-session {
+            background: #d4d4d4 none repeat scroll 0 0;
+            height: 34px;
+            left: -1px;
+            line-height: 34px;
+            position: absolute;
+            right: 0;
+            top: -2px;
+            color:$couleur-entete-haut;
+        }
+        .input-completer {
+            margin: 45px 10px;
+            .input {
+                border: 1px solid #d4d4d4;
+                border-radius: 10px 5px;
+                padding: 5px 10px;
+                width: 100%;
+            }
+        }
+        .submit {
+            padding: 6px 30px !important;
+            font-size: 15px;
+            border-radius: 2px !important;
+            background: #35b88f;
+            border: 1px solid #35b88f;
+            color: #fff;
+        }
+    }
+}
+
+.image-connexion {
+    height: 150px;
+    width: 150px;
+    img {
+        border: 1px solid #d4d4d4;
+        border-radius: 50%;
+        height: 150px;
+        padding: 1px;
+        width: 150px;
+    }
+}
+.ini-connexion {
+    background: $couleur-entete-haut none repeat scroll 0 0;
+    border-radius: 50%;
+    font-size: 50px;
+    height: 150px;
+    line-height: 150px;
+    margin: auto;
+    text-align: center;
+    width: 150px;
+    color: #fff;
+}

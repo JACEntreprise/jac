@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Connexion</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
+        <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/font-awesome-4.7.0/css/font-awesome.css")'>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/etape.css")'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    </head>
+    <body>
+        <div id="content-principal">
+            <div class="content-completer">
+                <h3>Connexion <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+                <h6>Interface de connexion pour l'administrateur</h6>
+                <form id="complet-info" class="form-admin">
+                    <div class="input-completer">
+                        <input type="text" placeholder="Pseudo" name="pseudo" id="pseudo" class="input">
+                    </div>
+                    <div class="input-completer">
+                        <input type="password" placeholder="mot de passe" name="motDePasse" id="motDePasse" class="input">
+                    </div>
+                    <input type="submit" value="Se connecter" class="submit submit-admin"/>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="@routes.MembreController.jsRoutes"></script>
+        <script src='@routes.Assets.versioned("javascripts/etape.js")'></script>
+    </body>
+</html>

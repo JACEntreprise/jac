@@ -1,0 +1,39 @@
+@(title: String)(style: Html)(entete: Html)(content: Html)(script: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/main.css")'>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/style.css")'>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href='@routes.Assets.versioned("javascripts/jquery_ui/jquery-ui.css")'>
+        <link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
+        <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/font-awesome-4.7.0/css/font-awesome.css")'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src='@routes.Assets.versioned("javascripts/inscription.js")' type="text/javascript"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/bootstrap.css")'>
+        @style
+
+
+    </head>
+    <body>
+        <div id="contenu-principal">
+            <div id="header">
+                @entete
+            </div>
+            <div id="contenu-page">
+                @content
+            </div>
+
+        </div>
+        <div class="over-completer"></div>
+        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script src='@routes.Assets.versioned("javascripts/jquery_ui/jquery-ui.js")' type="text/javascript"></script>
+        @script
+    </body>
+</html>

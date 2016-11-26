@@ -1,0 +1,85 @@
+@(message :String)
+@layout_no_connect("Accueil"){
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("theme/assets/js/ie/html5shiv.js")'>
+    <link rel="stylesheet" href='@routes.Assets.versioned("theme/assets/css/main.css")'/>
+    <link rel="stylesheet" href='@routes.Assets.versioned("theme/assets/css/ie8.css")' />
+}{
+
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <h1>Reseau social</h1>
+            <p>Pour les professionels de l'entreprise</p>
+        </header>
+        <footer>
+            <a href="#banner" class="button style2 scrolly-middle">Proceed as anticipated</a>
+        </footer>
+    </section>
+
+    <!-- Banner -->
+    <section id="banner">
+        <header>
+            <h2>Nos offres</h2>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br/>
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br/>
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br/>
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br/>
+        </p>
+        <footer>
+            <a href="#first" class="button style2 scrolly">Act on this message</a>
+        </footer>
+    </section>
+
+    <!-- Feature 1 -->
+    <article id="first" class="container box style1 right">
+        <a href="#" class="image fit"><img src='@routes.Assets.versioned("theme/images/reseau.jpg")' alt="" /></a>
+        <div class="inner">
+            <header>
+                <h2>Mon Reseau</h2>
+            </header>
+            <p>Avec "Reseau professionel" vous pouvez creer votre reseau de discussion pour avoir des relations avec d'autres professionels</p>
+        </div>
+    </article>
+
+    <article id="second" class="container box style1 right">
+        <a href="#" class="image fit"><img src='@routes.Assets.versioned("theme/images/groupe.png")' alt="" /></a>
+        <div class="inner">
+            <header>
+                <h2>Groupe</h2>
+            </header>
+            <p>"Reseau professionel" vous permet de creer, de participer à des groupes pour discuter sur des sujets entre professionel.</p>
+        </div>
+    </article>
+
+    <!-- Portfolio -->
+    <article class="container box style2">
+        <header>
+            <h2>Trouver un boulot</h2>
+            <p>"Reseau professionel" vous permet aussi<br />
+                de chercher et de trouver un emploi grace à votre profil.</p>
+        </header>
+        <div class="inner gallery">
+            <div class="row 0%">
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/competence.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/competence.png")' alt="" title="Competence" /></a></div>
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/formation.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/formation.png")' alt="" title="Formation" /></a></div>
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/cv.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/cv.png")' alt="" title="Curriculum vitae" /></a></div>
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/experience.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/experience.png")' alt="" title="Experience" /></a></div>
+            </div>
+            <div class="row 0%">
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/langue.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/langue.png")' alt="" title="Langue" /></a></div>
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/loisir.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/loisir.png")' alt="" title="Centre d'interet" /></a></div>
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/profil.png")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/profil.png")' alt="" title="Photo de profil" /></a></div>
+                <div class="3u 12u(mobile)"><a href='@routes.Assets.versioned("theme/images/fulls/ans.gif")' class="image fit"><img src='@routes.Assets.versioned("theme/images/thumbs/ans.gif")' alt="" title="Année(s) d'experience" /></a></div>
+            </div>
+        </div>
+    </article>
+}{
+    <script src='@routes.Assets.versioned("theme/assets/js/jquery.scrolly.min.js")'></script>
+    <script src='@routes.Assets.versioned("theme/assets/js/jquery.poptrox.min.js")'></script>
+    <script src='@routes.Assets.versioned("theme/assets/js/skel.min.js")'></script>
+    <script src='@routes.Assets.versioned("theme/assets/js/util.js")'></script>
+    <script src='@routes.Assets.versioned("theme/assets/js/ie/respond.min.js")'></script>
+    <script src='@routes.Assets.versioned("theme/assets/js/main.js")'></script>
+
+}

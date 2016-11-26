@@ -1,0 +1,69 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#interface d'administration
+GET     /admin                                             controllers.AdminController.accueil()
+
+#administration role
+GET     /admin/role                                       controllers.AdminController.role()
+GET     /admin/roles                                      controllers.RoleController.getRoles()
+GET     /admin/role/:id                                   controllers.RoleController.getRoleById(id :Long)
+GET     /admin/role/supprimer/:id                         controllers.RoleController.supprimerRole(id : Long)
+POST    /admin/role/ajouter                               controllers.RoleController.ajouterRole()
+POST    /admin/role/modifier/:id                          controllers.RoleController.modifierRole(id :Long)
+
+#administration pays
+GET     /admin/pays                                       controllers.AdminController.pays()
+GET     /admin/payss                                      controllers.PaysController.getPays()
+GET     /admin/pays/:id                                   controllers.PaysController.getPaysById(id :Long)
+GET     /admin/pays/supprimer/:id                         controllers.PaysController.supprimerPays(id : Long)
+POST    /admin/pays/ajouter                               controllers.PaysController.ajouterPays()
+POST    /admin/pays/modifier/:id                          controllers.PaysController.modifierPays(id :Long)
+
+#administration domaine
+GET     /admin/domaine                                    controllers.AdminController.secteur()
+GET     /admin/domaines                                   controllers.DomaineController.getDomaines()
+GET     /admin/domaine/:id                                controllers.DomaineController.getDomaineById(id :Long)
+GET     /admin/domaine/supprimer/:id                      controllers.DomaineController.supprimerDomaine(id : Long)
+POST    /admin/domaine/ajouter                            controllers.DomaineController.ajouterDomaine()
+POST    /admin/domaine/modifier/:id                       controllers.DomaineController.modifierDomaine(id :Long)
+
+#administration situation
+GET     /admin/situation                                  controllers.AdminController.situation()
+GET     /admin/situations                                 controllers.SituationController.getProfils()
+GET     /admin/situation/:id                              controllers.SituationController.getProfilById(id :Long)
+GET     /admin/situation/supprimer/:id                    controllers.SituationController.supprimerProfil(id : Long)
+POST    /admin/situation/ajouter                          controllers.SituationController.ajouterProfil()
+POST    /admin/situation/modifier/:id                     controllers.SituationController.modifierProfil(id :Long)
+
+# An example controller showing a sample home page
+GET     /                                                                controllers.HomeController.index()
+POST    /                                                                controllers.HomeController.connexionUser()
+GET     /oublie/password                                                 controllers.HomeController.motDePasseOublie()
+GET     /connexion/session                                               controllers.HomeController.connexionSession()
+POST    /connexion/session                                               controllers.HomeController.actionConnexionSession()
+GET     /connexion/admin                                                 controllers.HomeController.connexionAdmin()
+POST    /connexion/admin                                                 controllers.HomeController.actionConnexionAdmin()
+
+
+GET     /accueil                                                         controllers.ApplicationController.accueil()
+GET     /inscription/completer                                           controllers.ApplicationController.completerInfo()
+POST    /inscription/completer                                           controllers.ApplicationController.actionCompleterInfo()
+GET     /inscription/attente                                             controllers.ApplicationController.attente()
+GET     /inscription/info/profil                                         controllers.ApplicationController.infoProfil()
+POST    /inscription/info/profil                                         controllers.ApplicationController.actionInfoProfil()
+GET     /inscription/photo/profil                                        controllers.ApplicationController.completerImageProfil()
+POST    /inscription/photo/profil                                        controllers.ApplicationController.ajouterImageProfil()
+POST    /inscription/photo/profil/webcam                                 controllers.ApplicationController.enregisterWebcam()
+
+POST    /particulier                                                     controllers.HomeController.inscriptionParticulier()
+POST    /entreprise                                                      controllers.HomeController.inscriptionEntreprise()
+
+#confirmer inscription
+GET     /membre/inscription/confirmer/:code                              controllers.HomeController.confirmerInscription(code)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /javascriptRoutes                     controllers.AdminController.jsRoutes()
+GET     /javascriptRoutesMembre               controllers.MembreController.jsRoutes()
+GET     /assets/*file                         controllers.Assets.versioned(path="/public", file: Asset)

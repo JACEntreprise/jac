@@ -1,0 +1,52 @@
+@import tools.Session
+@(image: String)(nom :String)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Connexion</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
+        <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/font-awesome-4.7.0/css/font-awesome.css")'>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/etape.css")'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    </head>
+    <body>
+        <div id="content-principal">
+            <div class="content-completer">
+                <h3>Connexion <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+                <h6>Consulter votre email un mot de passe vous ait envoyé</h6>
+                <div class="error-session">
+                    <div class="input-connec connect-error">
+                        <span class="error-form">
+                            Vous n'avez droit qu'a 3 tentatives.
+                        </span>
+                    </div>
+                </div>
+                <form id="complet-info">
+                    <div class="img-content">
+                            @if(image==null){
+                                <div class="ini-connexion">@Session.nomInitial(nom)</div>
+                            }else{
+                                <span class="image-connexion"><img src='@routes.Assets.versioned("images/profil/")@image' alt=""></span>
+                            }
+
+                        <div class="nom-connexion">
+                            <span>@nom</span>
+                        </div>
+
+                    </div>
+                    <div class="input-completer">
+                        <input type="password" placeholder="mot de passe" name="motDePasse" id="motDePasse" class="input">
+                    </div>
+                    <input type="submit" value="Se connecter" class="submit submit-session"/>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="@routes.MembreController.jsRoutes"></script>
+        <script src='@routes.Assets.versioned("javascripts/etape.js")'></script>
+    </body>
+</html>

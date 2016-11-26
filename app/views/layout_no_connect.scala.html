@@ -1,0 +1,130 @@
+@(title : String)(style : Html)(content : Html)(script :Html)
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Reseau Professionel | @title</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        @style
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src='@routes.Assets.versioned("javascripts/inscription.js")' type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="les-boutons">
+            <button class="btn btn-primary bouton-connexion">Connexion</button>
+            <button class="btn btn-primary bouton-ins">Inscription</button>
+        </div>
+        @content
+        <div class="overlay-connect">
+            <div class="content-form-connect">
+                @membre.formulaireConnexion()
+            </div>
+        </div>
+
+        <div class="overlay-ins">
+            <div class="content-form-ins">
+                <div class="form-ins">
+                    <span class="close form-close close-ins"  aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </span>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#particulier">Particulier</a></li>
+                        <li><a href="#entreprise">Entreprise</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="particulier" class="tab-pane fade in active">
+                            <h3>Creez votre compte <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+                            <div class="cont-ins">
+                                <div class="parti-gauche partie-gauche-info">
+                                    <h6>L'inscription se passe en differentes etapes</h6>
+                                    <div class="etap">
+                                        <div class="etape-trait col-sm-2">
+                                            <span class="num">1</span>
+                                            <span class="trait"></span>
+                                        </div>
+                                        <div class="content-etape col-sm-10">
+                                            Vous allez devoir vous inscrire par votre adresse email.
+                                        </div>
+                                    </div>
+                                    <div class="etap">
+                                        <div class="etape-trait col-sm-2">
+                                            <span class="num">2</span>
+                                            <span class="trait"></span>
+                                        </div>
+                                        <div class="content-etape col-sm-10">
+                                            Confirmer votre email en consultant votre messagerie.
+                                        </div>
+                                    </div>
+                                    <div class="etap">
+                                        <div class="etape-trait col-sm-2">
+                                            <span class="num">3</span>
+                                            <span class="trait"></span>
+                                        </div>
+                                        <div class="content-etape col-sm-10">
+                                            Completer votre profil en renseignant vos donnees personnelles.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="parti-gauche partie-gauche-form">
+                                    @membre.formulaireInscriptionParticulier()
+                                </div>
+                            </div>
+                        </div>
+                        <div id="entreprise" class="tab-pane fade">
+                            <h3>Creez votre compte <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+                            <div class="cont-ins">
+                                <div class="parti-gauche partie-gauche-info">
+                                    <h6>L'inscription se passe en differentes etapes</h6>
+                                    <div class="etap">
+                                        <div class="etape-trait col-sm-2">
+                                            <span class="num">1</span>
+                                            <span class="trait"></span>
+                                        </div>
+                                        <div class="content-etape col-sm-10">
+                                            Vous allez devoir vous inscrire par votre adresse email.
+                                        </div>
+                                    </div>
+                                    <div class="etap">
+                                        <div class="etape-trait col-sm-2">
+                                            <span class="num">2</span>
+                                            <span class="trait"></span>
+                                        </div>
+                                        <div class="content-etape col-sm-10">
+                                            Confirmer votre email en consultant votre messagerie.
+                                        </div>
+                                    </div>
+                                    <div class="etap">
+                                        <div class="etape-trait col-sm-2">
+                                            <span class="num">3</span>
+                                            <span class="trait"></span>
+                                        </div>
+                                        <div class="content-etape col-sm-10">
+                                            Completer votre profil en renseignant vos donnees personnelles.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="parti-gauche partie-gauche-form">
+                                    @membre.formulaireInscriptionEntreprise()
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".nav-tabs a").click(function(){
+                    $(this).tab('show');
+                });
+            });
+        </script>
+        @script
+        <script type="text/javascript" src="@routes.MembreController.jsRoutes"></script>
+        <script src='@routes.Assets.versioned("javascripts/membre/membre.js")'></script>
+
+    </body>
+</html>

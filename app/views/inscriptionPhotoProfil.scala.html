@@ -1,0 +1,36 @@
+@import tools.Session
+@(session :Session)
+@layout_connect("Image de profil")(session){
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/inscription.css")'>
+}{
+    <div class="content-completer content-info-profil">
+        <h3>Differenciez-vous aux autres grace à votre photo de profil <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
+        <div class="content-photo-profil">
+            <div class="content-info-profil-item col-sm-6">
+                <form  method="POST" enctype="multipart/form-data" id="form-image-profil">
+                    <label for="image">
+                        <span class="submit" id="image-charger">Télécharger une image</span>
+                    </label>
+                    <input name="image" id="image" class="ajax_file hidden" type="file">
+                </form>
+            </div>
+            <div class="content-info-profil-item col-sm-6">
+                <span class="submit" id="photo-webcam">Prendre une photo</span>
+            </div>
+            <div class="body-webcam hidden">
+                <video id="video" class="thumbnail hidden" width="196" height="150" autoplay></video>
+                <canvas id="canvas" width="196" height="150" style="display:none;"></canvas>
+                <img id="imageok" src="" alt="" width="196" height="150" class="thumbnail hidden" />
+                <div class="boutons">
+                    <button id="snap" class="btn btn-primary hidden">Capturer</button>
+                    <button id="snap-annuler" class="btn btn-primary hidden">Annuler</button>
+                    <button id="recommencer-snap" class="btn btn-primary hidden">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Continuer" class="submit hidden" id="valider-image"/>
+    </div>
+
+}{
+    <script src='@routes.Assets.versioned("javascripts/webcam.js")'></script>
+}

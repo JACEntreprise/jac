@@ -1,0 +1,13 @@
+@import tools.Session
+@(session :Session)
+@layout_connect("Confirmation")(session){
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/inscription.css")'>
+}{
+    <div class="content-completer">
+        <h3>Confirmation du email</h3>
+        <p>Vous etes en attente. Vous allez devoir confirmer <br> votre email en consultant ta boite mail, <br> un lien vous ait envoyé.</p>
+
+    </div>
+
+}{
+}

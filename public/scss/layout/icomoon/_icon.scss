@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?u1o4uu');
+  src:  url('fonts/icomoon.eot?u1o4uu#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?u1o4uu') format('truetype'),
+    url('fonts/icomoon.woff?u1o4uu') format('woff'),
+    url('fonts/icomoon.svg?u1o4uu#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-relation:before {
+  content: "\e900";
+}
+.icomoon-message-discussion:before {
+  content: "\f04f";
+}
+.icomoon-quotes-left:before {
+  content: "\e977";
+}
+.icomoon-quotes-right:before {
+  content: "\e978";
+}
+.icomoon-tree:before {
+  content: "\e9bc";
+}
+.icomoon-earth:before {
+  content: "\e9ca";
+}
+.icomoon-chat:before {
+  content: "\e907";
+}
+.icomoon-eye:before {
+  content: "\e908";
+}
+.icomoon-user-add:before {
+  content: "\e90a";
+}
+.icomoon-flow-merge:before {
+  content: "\e901";
+}
+.icomoon-users2:before {
+  content: "\e909";
+}
+.icomoon-group:before {
+  content: "\f0c0";
+}
+.icomoon-users:before {
+  content: "\f0c0";
+}
+.icomoon-graduation-cap:before {
+  content: "\f19d";
+}
+.icomoon-mortar-board:before {
+  content: "\f19d";
+}
+.icomoon-triangle-down:before {
+  content: "\e902";
+}
+.icomoon-triangle-left:before {
+  content: "\e903";
+}
+.icomoon-triangle-right:before {
+  content: "\e904";
+}
+.icomoon-triangle-up:before {
+  content: "\e905";
+}
+.icomoon-competence:before {
+  content: "\e906";
+}
+
