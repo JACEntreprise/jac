@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
@@ -29,9 +30,11 @@ public class Domaine extends Model {
     private Date dateInscription;
 
     @ManyToMany
+    @JsonIgnore
     private List<Article> articles;
 
     @OneToMany(mappedBy = "domaine")
+    @JsonIgnore
     private List<Membre> membres;
 
     public Domaine(){
@@ -91,6 +94,7 @@ public class Domaine extends Model {
         this.dateInscription = dateInscription;
     }
 
+    @JsonIgnore
     public List<Article> getArticles() {
         return articles;
     }
@@ -99,7 +103,7 @@ public class Domaine extends Model {
         this.articles = articles;
     }
 
-
+    @JsonIgnore
     public List<Membre> getMembres() {
         return membres;
     }

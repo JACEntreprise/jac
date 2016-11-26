@@ -24,6 +24,7 @@ public class MembreController {
                         routes.javascript.HomeController.connexionSession(),
                         routes.javascript.HomeController.actionConnexionSession(),
                         routes.javascript.HomeController.actionConnexionAdmin(),
+                        routes.javascript.HomeController.actionOublie(),
                         routes.javascript.HomeController.connexionUser(),
                         routes.javascript.ApplicationController.attente(),
                         routes.javascript.ApplicationController.actionCompleterInfo(),

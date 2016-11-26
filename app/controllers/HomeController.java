@@ -33,12 +33,30 @@ public class HomeController extends Controller {
      * @return
      */
     public Result index() {
+        if(session("email")!=null){
+            return redirect(routes.ApplicationController.accueil());
+        }
+        if(session("session")!=null){
+            return redirect(routes.HomeController.connexionSession());
+        }
+        if(session("admin")!=null){
+            return redirect(routes.AdminController.accueil());
+        }
         Role.ajouterRoleUserAdmin();
         return ok(index.render("yes"));
     }
 
 
     public Result motDePasseOublie() {
+        if(session("admin")!=null){
+            return redirect(routes.AdminController.accueil());
+        }
+        if(session("session")!=null){
+            return redirect(routes.HomeController.connexionSession());
+        }
+        if(session("email")!=null){
+            return redirect(routes.ApplicationController.accueil());
+        }
         return ok(mot_de_passe_oublie.render());
     }
 
@@ -52,6 +70,9 @@ public class HomeController extends Controller {
             return redirect(routes.HomeController.index());
         }
         Membre membre=Membre.getMembreByEmail(sess);
+        if(membre.lastSession()==null){
+            return redirect(routes.HomeController.index());
+        }
         if(membre.lastSession().getTentative()>=3){
             membre.lastSession().activer();
             return redirect(routes.HomeController.index());
@@ -62,6 +83,12 @@ public class HomeController extends Controller {
     public Result connexionAdmin() {
         if(session("admin")!=null){
             return redirect(routes.AdminController.accueil());
+        }
+        if(session("session")!=null){
+            return redirect(routes.HomeController.connexionSession());
+        }
+        if(session("email")!=null){
+            return redirect(routes.ApplicationController.accueil());
         }
         Membre.addAmin();
         return ok(connexion_admin.render());
@@ -85,6 +112,26 @@ public class HomeController extends Controller {
         result.put("result","nok");
         result.put("code", "304");
         result.put("message", "pseudo ou mot de passe incorrect");
+        return ok(result);
+    }
+
+    public Result actionOublie() {
+        JsonNode json = request().body().asJson();
+        ObjectNode result = Json.newObject();
+        String email = json.findPath("email").textValue();
+        Role role=Role.getRoleByCode("Admin");
+        Membre membre=Membre.getMembreByEmail(email);
+        if(membre!=null){
+            String password=SendMail.envoieMotDePasse("Changement mot de passe",membre,mailerClient);
+            membre.changerMotDePasse(password);
+            result.put("result","ok");
+            result.put("code", "1000");
+            result.put("message", "Creation avec succes");
+            return ok(result);
+        }
+        result.put("result","nok");
+        result.put("code", "304");
+        result.put("message", "email incorrect");
         return ok(result);
     }
 
@@ -125,6 +172,7 @@ public class HomeController extends Controller {
             result.put("message", "Cet email est deja utilisé");
             return ok(result);
         }
+        Session.deleteSession();
         Session sess=new Session(membre.getEmail(),membre.getNomProfil(),membre.getRole().getCode(),"entreprise");
         sess.creerSession();
         SendMail.confirmationMail(membre,mailerClient);
@@ -156,6 +204,7 @@ public class HomeController extends Controller {
                 }else{
                     type="particulier";
                 }
+                Session.deleteSession();
                 Session sess=new Session(membre.getEmail(),membre.getNomProfil(),membre.getRole().getCode(),type);
                 sess.creerSession();
                 return redirect(routes.ApplicationController.completerInfo());
@@ -188,6 +237,7 @@ public class HomeController extends Controller {
             result.put("message", "Mot de passe incorrecte");
             return ok(result);
         }
+        Session.deleteSession();
         String password=SendMail.envoieMotDePasse("Nouvelle connexion",membre,mailerClient);
         membre.activerSession();
         SessionUser sess=SessionUser.newSession(BCrypt.hashpw(password, membre.getSalt()),membre);
@@ -223,6 +273,7 @@ public class HomeController extends Controller {
         }else{
             type="particulier";
         }
+        Session.deleteSession();
         Session sess=new Session(membre.getEmail(),membre.getNomProfil(),membre.getRole().getCode(),type);
         sess.creerSession();
         result.put("result","ok");

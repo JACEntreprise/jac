@@ -41,10 +41,12 @@ POST    /admin/situation/modifier/:id                     controllers.SituationC
 GET     /                                                                controllers.HomeController.index()
 POST    /                                                                controllers.HomeController.connexionUser()
 GET     /oublie/password                                                 controllers.HomeController.motDePasseOublie()
+POST    /oublie/password                                                 controllers.HomeController.actionOublie()
 GET     /connexion/session                                               controllers.HomeController.connexionSession()
 POST    /connexion/session                                               controllers.HomeController.actionConnexionSession()
 GET     /connexion/admin                                                 controllers.HomeController.connexionAdmin()
 POST    /connexion/admin                                                 controllers.HomeController.actionConnexionAdmin()
+POST    /user/logout                                                     controllers.ApplicationController.deconnecter()
 
 
 GET     /accueil                                                         controllers.ApplicationController.accueil()

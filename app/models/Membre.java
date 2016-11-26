@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import javax.xml.transform.Result;
 
 import com.avaje.ebean.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.jetbrains.annotations.Nullable;
 import org.mindrot.jbcrypt.BCrypt;
 import play.data.format.Formats;
@@ -206,6 +207,7 @@ public class Membre extends Model {
      */
 
     @Nullable
+    @JsonIgnore
     public static Membre getMembreByEmail(String email){
         List<Membre> membres= Membre.find.all();
         for (Membre m:membres){
@@ -683,9 +685,15 @@ public class Membre extends Model {
         if(role.getMembres().size()<1){
             Membre membre=new Membre();
             membre.setPseudo("Admin");
+            membre.setEmail("jacentreprise@gmail.com");
             membre.setMotDePasse(BCrypt.hashpw("admin", membre.getSalt()));
             membre.setRole(role);
             membre.save();
         }
+    }
+
+    public void changerMotDePasse(String motDePasse){
+        this.setMotDePasse(BCrypt.hashpw(motDePasse, this.getSalt()));
+        this.update();
     }
 }

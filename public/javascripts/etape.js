@@ -81,4 +81,41 @@ $(document).ready(function(){
                 });
             }
         });
+
+        $(".content-completer").on("click",".submit-oublie",function(){
+            var $email=$("#complet-info #email").val();
+            var $verif=true;
+            if(/^ {0,}$/i.test($email)){
+                $("#complet-info #email").addClass("border-bottom-danger");
+                $("#complet-info #email").removeClass("border-bottom-succes");
+                $verif=false;
+            }else{
+                $("#complet-info #email").removeClass("border-bottom-danger");
+                $("#complet-info #email").addClass("border-bottom-succes");
+            }
+            if($verif==true){
+                $(".imload").fadeIn(1000);
+                $(".submit-oublie").attr("disabled",true);
+                var r = jsRoutes.controllers.HomeController.actionOublie();
+                var data={
+                    "email" :$email
+                };
+                $.ajax({url: r.url, type: r.type, contentType:"application/json",
+                    data:JSON.stringify(data),
+                    success: function(data){
+                        if(data.result=="ok"){
+                            var lien = jsRoutes.controllers.HomeController.index();
+                            $(location).attr("href",lien.url);
+                        }else{
+                            $(".connect-error").removeClass("hidden");
+                            $(".submit-session").attr("disabled",false);
+                        }
+                    },
+                    error :function(data){
+                        alert("une erreur s'est produite l'ors de la connexion");
+                        $(".submit-session").attr("disabled",false);
+                    }
+                });
+            }
+        });
 });

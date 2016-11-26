@@ -17,14 +17,21 @@
     <div class="content-completer">
         <h3>Mot de passe oublié <small><i class="fa fa-spinner fa-spin imload"></i></small></h3>
         <h6>Entrer votre email un mot de passe vous sera envoyé</h6>
+        <div class="input-connec connect-error hidden">
+            <span class="error-form">
+                <span class="icon-error-form"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+                <span class="texte-error-form">Email Obligatoire.</i></span>
+            </span>
+        </div>
         <form id="complet-info">
             <div class="input-completer">
                 <input type="email" placeholder="votre email" name="email" id="email" class="input">
             </div>
-            <input type="submit" value="Envoyer" class="submit"/>
+            <input type="submit" value="Envoyer" class="submit submit-oublie"/>
         </form>
     </div>
 </div>
-<script src='@routes.Assets.versioned("javascripts/etape.js")'></script>
+    <script type="text/javascript" src="@routes.MembreController.jsRoutes"></script>
+    <script src='@routes.Assets.versioned("javascripts/etape.js")'></script>
 </body>
 </html>

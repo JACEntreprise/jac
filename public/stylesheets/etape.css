@@ -82,3 +82,20 @@ body .content-completer .submit {
   width: 150px;
   color: #fff;
 }
+
+/* line 75, ../scss/etape.scss */
+.error-form {
+  background: #d9534f none repeat scroll 0 0;
+  color: #ffffff;
+  float: left;
+  margin-bottom: 45px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+/* line 83, ../scss/etape.scss */
+.icon-error-form {
+  font-size: 18px;
+  margin-right: 2px;
+  padding: 5px 10px;
+}

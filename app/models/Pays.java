@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.StringUtils;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
@@ -29,6 +30,7 @@ public class Pays extends Model {
     private boolean etat;
 
     @OneToMany(mappedBy = "pays")
+    @JsonIgnore
     private List<Membre> membres;
 
     @Formats.DateTime(pattern="dd.MM.yyyy HH:mm:ss")
@@ -83,6 +85,7 @@ public class Pays extends Model {
         this.etat = etat;
     }
 
+    @JsonIgnore
     public List<Membre> getMembres() {
         return membres;
     }

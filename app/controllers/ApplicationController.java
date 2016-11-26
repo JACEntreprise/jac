@@ -264,4 +264,8 @@ public class ApplicationController extends Controller {
         return ok(accueil.render(sess));
     }
 
+    public Result deconnecter(){
+        Session.deleteSession();
+        return redirect(routes.HomeController.index());
+    }
 }
